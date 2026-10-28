@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState} from 'react'
 
 function Square({value, onSquareClick}){
 
@@ -17,11 +17,6 @@ function Square({value, onSquareClick}){
 
 
  function Board({xIsNext, squares, onPlay}) {
-
-  //const [xIsNext, setXIsNext] = useState (true);
-  //const [squares, setSquare] = useState(Array(9).fill(null))
-
-
   const winner = calculateWinner(squares)
   let status
   if(winner){
@@ -50,9 +45,6 @@ function Square({value, onSquareClick}){
     onPlay(nextSquare)
   }
 
-
-
-
   return (
     <>
     <div className = "status">{status}</div>
@@ -80,10 +72,14 @@ function Square({value, onSquareClick}){
   
 }
 
+
+
+
 export default function Game(){
-  const xIsNext = currentMove % 2 === 0
+  
   const [history, setHistory] = useState([Array(9).fill(null)])
   const [currentMove, setCurrentMove] = useState(0)
+  const xIsNext = currentMove % 2 === 0
   const currentSquares = history[currentMove];
 
   function handlePlay(nextSquares){
@@ -138,15 +134,6 @@ export default function Game(){
   )
 
 }
-
-
-
-
-
-
-
-
-
 
 
 
